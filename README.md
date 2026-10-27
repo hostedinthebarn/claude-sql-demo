@@ -48,20 +48,25 @@ cd claude-sql-demo
 uv run pytest            # optional: 21 tests
 ```
 
-Then add the server to Claude Desktop's config (Settings → Developer → Edit Config), using the full path to the folder you cloned:
+Then add the server to Claude Desktop's config file. Quit Claude Desktop first (⌘Q on a Mac), because it rewrites the file while it runs and can drop your change. The file is at:
+
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+Add an `mcpServers` section at the top level, next to anything already in the file. Use the full path to `uv` (run `which uv`, or `where uv` on Windows), because Desktop doesn't see your shell's PATH, and the full path to the folder you cloned:
 
 ```json
 {
   "mcpServers": {
     "bluebonnet-sales": {
-      "command": "uv",
+      "command": "/full/path/to/uv",
       "args": ["run", "--directory", "/full/path/to/claude-sql-demo", "claude-sql-demo"]
     }
   }
 }
 ```
 
-Restart Claude Desktop. The database is created on first use, at `bluebonnet.db` in the project folder. Set `BLUEBONNET_DB` to put it somewhere else. To start again from fresh data, delete the file.
+Start Claude Desktop again. If the tools don't appear, the log is `mcp-server-bluebonnet-sales.log` in `~/Library/Logs/Claude/` (Windows: `%APPDATA%\Claude\logs\`). The database is created on first use, at `bluebonnet.db` in the project folder. Set `BLUEBONNET_DB` to put it somewhere else. To start again from fresh data, delete the file.
 
 ## Using it with a real database
 
