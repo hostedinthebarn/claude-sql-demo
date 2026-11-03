@@ -80,3 +80,5 @@ The demo uses SQLite so it runs with one command. For SQL Server, Postgres or My
 ## Licence
 
 MIT. See [LICENSE](LICENSE).
+
+The code is MIT licensed. The name "claude-sql-demo" and any logos aren't covered by the licence.
