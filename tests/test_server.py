@@ -2,7 +2,6 @@ import asyncio
 import sqlite3
 
 import pytest
-
 from mcp.server.mcpserver.exceptions import ToolError
 
 from claude_sql_demo import server

@@ -1,5 +1,7 @@
 # Claude SQL demo
 
+[![CI](https://github.com/hostedinthebarn/claude-sql-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/hostedinthebarn/claude-sql-demo/actions/workflows/ci.yml)
+
 An MCP server that lets Claude answer questions from a business's SQL database, safely.
 
 It runs against **Bluebonnet Outfitters**, a made-up outdoor-gear shop: 60 customers, 16 products and a year of orders in a local SQLite file. Ask Claude things like:
